@@ -82,5 +82,16 @@ public class Main {
         if (wasCar) {
             System.out.println("wasCar is true");
         }
+
+        double firstVariable = 20.00d;
+        double secondVariable = 80.00d;
+        double sumAndSome = (firstVariable + secondVariable) * 100.00;
+        double remainder = sumAndSome % 40.00d;
+        boolean isZero = (remainder == 0) ? true : false;
+        System.out.println("isZero = " + isZero);
+
+        if (!isZero) {
+            System.out.println("Got some remainder");
+        }
     }
 }
