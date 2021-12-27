@@ -9,14 +9,31 @@ public class Main {
         int levelCompleted = 5;
         int bonus = 100;
 
+        // can assign a variable to a method call
+        int highScore = calculateScore(gameOver, score, levelCompleted, bonus);
+        System.out.println("Your final score was " + highScore);
+
         //define variables, run calculateScore method and then continue with code
-       calculateScore(gameOver, score, levelCompleted, bonus);
 
        score = 10000;
        levelCompleted = 8;
        bonus = 200;
-       calculateScore(gameOver, score, levelCompleted, bonus);
 
+        // can assign a variable to a method call
+        highScore = calculateScore(gameOver, score, levelCompleted, bonus);
+        System.out.println("Your final score was " + highScore);
+
+        int highScorePosition = calculateHighScore(1000);
+        displayHighScorePosition("Charlene", highScorePosition);
+
+        highScorePosition = calculateHighScore(900);
+        displayHighScorePosition("Teresa", highScorePosition);
+
+        highScorePosition = calculateHighScore(400);
+        displayHighScorePosition("Alex", highScorePosition);
+
+        highScorePosition = calculateHighScore(50);
+        displayHighScorePosition("Shannon", highScorePosition);
     }
 
     public static int calculateScore(boolean gameOver, int score, int levelCompleted, int bonus) {
@@ -32,7 +49,24 @@ public class Main {
         }
 
         //SOMETHING must be returned
-        //-1 is conventially used to indicate an error or "value not found"
+        //-1 is conventionally used to indicate an error or "value not found"
         return -1;
     }
+
+    public static void displayHighScorePosition(String playersName, int position) {
+        System.out.println(playersName + " managed to get into position " + position + " on the high score table.");
+    }
+
+    public static int calculateHighScore(int playerScore) {
+        if (playerScore >= 1000) {
+            return 1;
+        } else if (playerScore >= 500 && playerScore < 1000) {
+            return 2;
+        } else if (playerScore >= 100 && playerScore < 500) {
+            return 3;
+        } else {
+            return 4;
+        }
+    }
+
 }
