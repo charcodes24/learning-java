@@ -12,5 +12,8 @@ public class Main {
         hamburger.addHamburgerAddition3("Cheese", 1.12);
         price = hamburger.itemizeHamburger();
         System.out.println(price);
+
+        HealthyBurger healthyBurger = new HealthyBurger("Bacon", 5.67);
+        healthyBurger.itemizeHamburger();
     }
 }
