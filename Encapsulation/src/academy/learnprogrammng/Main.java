@@ -25,5 +25,17 @@ public class Main {
 
         EnhancedPlayer player = new EnhancedPlayer("Charlene", 200, "Sword");
         System.out.println("Initial health is " + player.getHitPoints());
+
+
+        Printer printer = new Printer(50, false);
+        System.out.println("Initial page count = " + printer.getPagesPrinted());
+
+
+        int pagesPrinted = printer.printPages(4);
+        System.out.println("Pages printed was " + pagesPrinted + ". New total print count for printer = " + printer.getPagesPrinted());
+
+        pagesPrinted = printer.printPages(2);
+        System.out.println("Pages printed was " + pagesPrinted + ". New total print count for printer = " + printer.getPagesPrinted());
+
     }
 }
