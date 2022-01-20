@@ -1,8 +1,9 @@
 package academy.learnprogrammng;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class Team {
+public class Team<T extends Player> { // all valid upper bounds of T have to extend the Player class
 
     private String name;
     int played = 0;
@@ -10,7 +11,7 @@ public class Team {
     int lost = 0;
     int tied = 0;
 
-    private ArrayList<Player> members = new ArrayList<>();
+    private ArrayList<T> members = new ArrayList<>();
 
     public Team(String name) {
         this.name = name;
@@ -20,7 +21,7 @@ public class Team {
         return name;
     }
 
-    public boolean addPlayer(Player player) {
+    public boolean addPlayer(T player) {
         if (members.contains(player)) {
             System.out.println(player.getName() + " is already on this team");
             return false;
