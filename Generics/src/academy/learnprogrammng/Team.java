@@ -3,7 +3,7 @@ package academy.learnprogrammng;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Team<T extends Player> { // all valid upper bounds of T have to extend the Player class
+public class Team<T extends Player> implements Comparable<Team<T>>{ // all valid upper bounds of T have to extend the Player class
 
     private String name;
     int played = 0;
@@ -52,5 +52,16 @@ public class Team<T extends Player> { // all valid upper bounds of T have to ext
 
     public int ranking() {
         return (won * 2) + tied;
+    }
+
+    @Override
+    public int compareTo(Team<T> team) {
+        if (this.ranking() > team.ranking()) {
+            return -1;
+        } else if (this.ranking() < team.ranking()) {
+            return 1;
+        } else {
+            return 0;
+        }
     }
 }
